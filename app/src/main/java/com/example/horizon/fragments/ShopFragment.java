@@ -33,7 +33,6 @@ public class ShopFragment extends Fragment implements OnTaskCompleted<ArrayList<
 
     @Override
     public void onTaskCompleted(ArrayList<ShopItem> response) {
-        TextView textView = (TextView) view.findViewById(R.id.results);
-        textView.setText(response.get(0).getImageUrl());
+
     }
 }
