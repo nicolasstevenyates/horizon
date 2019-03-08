@@ -23,7 +23,6 @@ public class ShopFragment extends Fragment implements OnTaskCompleted<ArrayList<
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         view = inflater.inflate(R.layout.fragment_shop, container, false);
 
         ShopTask shopTask = new ShopTask(this);
@@ -33,7 +32,7 @@ public class ShopFragment extends Fragment implements OnTaskCompleted<ArrayList<
     }
 
     @Override
-    public void requestCompleted(ArrayList<ShopItem> response) {
+    public void onTaskCompleted(ArrayList<ShopItem> response) {
         TextView textView = (TextView) view.findViewById(R.id.results);
         textView.setText(response.get(0).getImageUrl());
     }

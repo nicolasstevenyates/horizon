@@ -4,6 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ShopItem {
+
     private String imageUrl;
     private int manifestId;
     private String name;

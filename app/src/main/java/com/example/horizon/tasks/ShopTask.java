@@ -20,18 +20,14 @@ public class ShopTask {
     private OnTaskCompleted listener;
 
     public ShopTask(OnTaskCompleted listener) {
-
         this.listener = listener;
-        loadShopItems();
     }
 
     public void loadShopItems() {
-
         HttpClient.get("store", null, new JsonHttpResponseHandler() {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
-
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         JSONObject o = response.getJSONObject(i);
@@ -41,7 +37,7 @@ public class ShopTask {
                         e.printStackTrace();
                     }
                 }
-                listener.requestCompleted(shopItems);
+                listener.onTaskCompleted(shopItems);
             }
         });
     }
