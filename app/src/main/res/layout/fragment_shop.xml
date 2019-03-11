@@ -6,11 +6,11 @@
     android:background="@android:color/holo_blue_bright"
     tools:context=".fragments.ShopFragment">
 
-    <include layout="@layout/shop_item" />
-
-    <GridView
+    <com.example.horizon.components.DynamicListView
+        android:id="@+id/shop_items_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:listitem="@layout/shop_item" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

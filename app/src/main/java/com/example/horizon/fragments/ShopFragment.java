@@ -4,9 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.horizon.R;
+import com.example.horizon.adapters.ShopItemsAdapter;
+import com.example.horizon.components.DynamicListView;
 import com.example.horizon.models.ShopItem;
 import com.example.horizon.requests.OnTaskCompleted;
 import com.example.horizon.tasks.ShopTask;
@@ -33,6 +34,8 @@ public class ShopFragment extends Fragment implements OnTaskCompleted<ArrayList<
 
     @Override
     public void onTaskCompleted(ArrayList<ShopItem> response) {
-
+        ShopItemsAdapter shopItemsAdapter = new ShopItemsAdapter(getContext(), response);
+        DynamicListView listView = view.findViewById(R.id.shop_items_list);
+        listView.setAdapter(shopItemsAdapter);
     }
 }
