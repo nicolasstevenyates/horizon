@@ -2,9 +2,9 @@ package com.example.horizon.components;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.ListView;
+import android.widget.GridView;
 
-public class DynamicListView extends ListView {
+public class DynamicListView extends GridView {
 
     public DynamicListView(Context context, AttributeSet attrs) {
         super(context, attrs);

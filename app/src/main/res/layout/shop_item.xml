@@ -17,6 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/center_gradient"
         app:srcCompat="@drawable/shop_item" />
 
     <TextView
@@ -28,7 +29,7 @@
         android:text="Cabbie"
         android:textAlignment="center"
         android:textColor="@android:color/white"
-        android:textSize="80sp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@+id/shop_item_image" />
 
     <LinearLayout
@@ -40,9 +41,10 @@
         app:layout_constraintTop_toBottomOf="@+id/shop_item_name">
 
         <ImageView
-            android:layout_width="52sp"
-            android:layout_height="52sp"
+            android:layout_width="18sp"
+            android:layout_height="18sp"
             android:scaleType="fitXY"
+            android:layout_margin="2sp"
             app:srcCompat="@drawable/ic_vbucks" />
 
         <TextView
@@ -51,10 +53,10 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:includeFontPadding="false"
-            android:paddingStart="4dp"
+            android:paddingStart="1sp"
             android:text="800"
             android:textColor="@android:color/white"
-            android:textSize="50sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

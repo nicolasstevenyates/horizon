@@ -1,6 +1,8 @@
 package com.example.horizon.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,12 +10,13 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.horizon.R;
 import com.example.horizon.models.ShopItem;
-import com.example.horizon.requests.ImageLoader;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
 
 
 public class ShopItemsAdapter extends BaseAdapter {
@@ -55,13 +58,39 @@ public class ShopItemsAdapter extends BaseAdapter {
         ImageView shopItemImage = convertView.findViewById(R.id.shop_item_image);
 
         shopItemName.setText(shopItem.getName());
-        try {
-            shopItemImage.setImageBitmap(new ImageLoader().execute(shopItem.getImageUrl()).get());
-        } catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
+
+
+        DecimalFormatSymbols customSymbols = new DecimalFormatSymbols();
+        customSymbols.setGroupingSeparator('\'');
+        DecimalFormat decimalFormat = new DecimalFormat("###,###.###", customSymbols);
+
+        shopItemPrice.setText(String.valueOf(decimalFormat.format(shopItem.getVBucks())));
+
+        int color = Color.WHITE;
+
+        switch (shopItem.getRarity()) {
+            case "Handmade":
+                color = context.getResources().getColor(R.color.colorUncommon);
+                convertView.setBackgroundColor(color);
+                break;
+            case "Sturdy":
+                color = context.getResources().getColor(R.color.colorRare);
+                convertView.setBackgroundColor(color);
+                break;
+            case "Quality":
+                color = context.getResources().getColor(R.color.colorEpic);
+                convertView.setBackgroundColor(color);
+                break;
+            case "Fine":
+                color = context.getResources().getColor(R.color.colorLegendary);
+                convertView.setBackgroundColor(color);
+                break;
         }
 
-        //shopItemPrice.setText(shopItem.getvBucks());
+        Glide.with(convertView)
+                .load(shopItem.getImageUrl())
+                .placeholder(new ColorDrawable(color))
+                .into(shopItemImage);
 
         return convertView;
     }

@@ -12,7 +12,7 @@
         android:layout_margin="8dp"
         android:divider="@color/colorTransperent"
         android:horizontalSpacing="8dp"
-        android:numColumns="2"
+        android:numColumns="4"
         android:verticalSpacing="8dp"
         tools:listitem="@layout/shop_item" />
 

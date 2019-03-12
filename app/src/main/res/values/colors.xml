@@ -3,4 +3,10 @@
     <color name="colorPrimary">#66e2fc</color>
     <color name="colorPrimaryDark">#158ed7</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorTransperent">#00000000</color>
+
+    <color name="colorUncommon">#50a612</color>
+    <color name="colorRare">#3cc3fa</color>
+    <color name="colorEpic">#c46ae6</color>
+    <color name="colorLegendary">#ea8b2b</color>
 </resources>

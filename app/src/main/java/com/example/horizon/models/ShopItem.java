@@ -51,7 +51,7 @@ public class ShopItem {
         return storeCategory;
     }
 
-    public int getvBucks() {
+    public int getVBucks() {
         return vBucks;
     }
 }
