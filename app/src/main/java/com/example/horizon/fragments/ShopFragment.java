@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.example.horizon.R;
 import com.example.horizon.adapters.ShopItemsAdapter;
-import com.example.horizon.components.DynamicListView;
+import com.example.horizon.components.DynamicGridView;
 import com.example.horizon.models.ShopItem;
 import com.example.horizon.requests.OnTaskCompleted;
 import com.example.horizon.tasks.ShopTask;
@@ -21,7 +21,7 @@ import androidx.fragment.app.Fragment;
 public class ShopFragment extends Fragment implements OnTaskCompleted<ArrayList<ShopItem>> {
 
     private View view;
-    private DynamicListView listView;
+    private DynamicGridView listView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,10 +48,9 @@ public class ShopFragment extends Fragment implements OnTaskCompleted<ArrayList<
     }
 
     private ArrayList<ShopItem> getStoreToday(ArrayList<ShopItem> allShopItems) {
-
         ArrayList<ShopItem> shopItems = new ArrayList<>();
-
         int i = 0;
+
         for (ShopItem shopitem : allShopItems) {
             if (shopitem.getStoreCategory().equals("BRWeeklyStorefront") && i == 0) {
                 shopItems.add(shopitem);

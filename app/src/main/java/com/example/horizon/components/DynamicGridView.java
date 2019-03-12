@@ -4,17 +4,17 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.GridView;
 
-public class DynamicListView extends GridView {
+public class DynamicGridView extends GridView {
 
-    public DynamicListView(Context context, AttributeSet attrs) {
+    public DynamicGridView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public DynamicListView(Context context) {
+    public DynamicGridView(Context context) {
         super(context);
     }
 
-    public DynamicListView(Context context, AttributeSet attrs, int defStyle) {
+    public DynamicGridView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 

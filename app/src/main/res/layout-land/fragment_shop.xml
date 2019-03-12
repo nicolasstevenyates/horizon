@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ShopFragment">
 
-    <com.example.horizon.components.DynamicListView
+    <com.example.horizon.components.DynamicGridView
         android:id="@+id/shop_items_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
