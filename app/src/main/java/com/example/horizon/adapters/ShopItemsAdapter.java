@@ -3,6 +3,7 @@ package com.example.horizon.adapters;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,22 +71,24 @@ public class ShopItemsAdapter extends BaseAdapter {
 
         switch (shopItem.getRarity()) {
             case "Handmade":
-                color = context.getResources().getColor(R.color.colorUncommon);
-                convertView.setBackgroundColor(color);
+                color = context.getResources().getColor(R.color.colorUncommon, null);
                 break;
             case "Sturdy":
-                color = context.getResources().getColor(R.color.colorRare);
-                convertView.setBackgroundColor(color);
+                color = context.getResources().getColor(R.color.colorRare, null);
                 break;
             case "Quality":
-                color = context.getResources().getColor(R.color.colorEpic);
-                convertView.setBackgroundColor(color);
+                color = context.getResources().getColor(R.color.colorEpic, null);
                 break;
             case "Fine":
-                color = context.getResources().getColor(R.color.colorLegendary);
-                convertView.setBackgroundColor(color);
+                color = context.getResources().getColor(R.color.colorLegendary, null);
                 break;
         }
+
+        GradientDrawable shape = (GradientDrawable) context.getDrawable(R.drawable.border_radius);
+
+        shape.setColor(color);
+
+        convertView.setBackground(shape);
 
         Glide.with(convertView)
                 .load(shopItem.getImageUrl())

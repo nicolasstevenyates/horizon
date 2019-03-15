@@ -10,11 +10,11 @@
             android:icon="@drawable/ic_shopping_cart"
             android:title="Daily Shop" />
 
-        <item
-            android:id="@+id/nav_stats"
-            android:checked="false"
-            android:icon="@drawable/ic_stats"
-            android:title="Stats" />
+        <!--<item-->
+        <!--android:id="@+id/nav_stats"-->
+        <!--android:checked="false"-->
+        <!--android:icon="@drawable/ic_stats"-->
+        <!--android:title="Stats" />-->
         <!--<item-->
         <!--android:id="@+id/nav_gallery"-->
         <!--android:icon="@drawable/ic_menu_gallery"-->
